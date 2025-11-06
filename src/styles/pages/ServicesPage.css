@@ -1,0 +1,229 @@
+.services-page {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+}
+.services-hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 300px;
+  gap: 0;
+}
+.hero-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.features-section {
+  max-width: 1400px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+.feature-icon {
+  flex-shrink: 0;
+  color: #007bff;
+}
+.feature-text {
+  font-size: 0.875rem;
+  color: #333;
+}
+.services-content {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.service-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+.service-list li {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.service-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+}
+.benefits-section {
+  background: #f0f8ff;
+  padding: 4rem 2rem;
+}
+.benefits-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+.benefit-item {
+  text-align: center;
+}
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  color: #007bff;
+}
+.benefit-item h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+}
+.benefit-item p {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
+}
+.testimonials-section {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+.testimonial-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: start;
+}
+.testimonial-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.testimonial-content {
+  flex: 1;
+}
+.testimonial-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.testimonial-author {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.testimonial-location {
+  font-size: 0.875rem;
+  color: #666;
+}
+.newsletter-section {
+  max-width: 1400px;
+  margin: 4rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+}
+.newsletter-image {
+  background-size: cover;
+  background-position: center;
+}
+.newsletter-content {
+  background: #0066cc;
+  color: white;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.newsletter-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.newsletter-content p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+}
+.newsletter-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+.newsletter-button {
+  background: white;
+  color: #0066cc;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.newsletter-button:hover {
+  opacity: 0.9;
+}

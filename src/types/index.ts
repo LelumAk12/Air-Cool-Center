@@ -6,6 +6,7 @@ export interface Product {
   originalPrice?: number;
   image: string;
   description?: string;
+  specifications?: Record<string, string>;
 }
 export interface Category {
   id: string;
@@ -16,11 +17,6 @@ export interface Service {
   title: string;
   description: string;
   items: string[];
-}
-export interface Benefit {
-  icon: string;
-  title: string;
-  description: string;
 }
 export interface Testimonial {
   id: string;

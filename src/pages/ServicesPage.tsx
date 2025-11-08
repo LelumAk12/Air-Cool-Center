@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
-import { TruckIcon, ShieldCheckIcon, WrenchIcon, HeadphonesIcon } from 'lucide-react';
+import { TruckIcon, ShieldCheckIcon, WrenchIcon, HeadphonesIcon, ArrowRightIcon } from 'lucide-react';
 import { Service } from '../types';
 import '../styles/pages/ServicesPage.css';
 const services: Service[] = [{
@@ -26,27 +26,21 @@ export const ServicesPage: React.FC = () => {
       <Header />
       <div className="services-hero">
         <div className="hero-card" style={{
-        backgroundImage: `linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)), url(BG1.jpg)`
+        backgroundImage: `linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)), url(/BG1.jpg)`
       }}>
-          <div>
-            <h2>Your Trusted</h2>
-            <h2>Cooling Partner</h2>
-            <button className="bg-white text-blue-600 px-6 py-2 rounded mt-4 font-semibold">
-              Shop Now
-            </button>
+          <div className="hero-card-content">
+            <h2>Your Trusted Cooling Partner</h2>
+            <button className="hero-button">Shop Now</button>
           </div>
         </div>
         <div className="hero-card" style={{
-        backgroundImage: `linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)), url(BG2.jpg)`
+        backgroundImage: `linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)), url(/BG2.jpg)`
       }}>
-          <div>
+          <div className="hero-card-content">
             <h2>Air Cool Center</h2>
-            <p className="text-sm mt-2">Your Trusted Cooling Partner</p>
+            <p>Your Trusted Cooling Partner</p>
           </div>
         </div>
-        <div className="hero-card" style={{
-        backgroundImage: `linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)), url(BG3.jpg)`
-      }} />
       </div>
       <div className="features-section">
         <div className="feature-item">
@@ -112,25 +106,38 @@ export const ServicesPage: React.FC = () => {
       </div>
       <div className="testimonials-section">
         <h2 className="section-title">Testimonials</h2>
-        <p className="text-center text-gray-600 mb-8">
-          Over 15,000 happy customers.
-        </p>
+        <p className="testimonials-subtitle">Over 15,000 happy customers.</p>
         <div className="testimonial-card">
-          <img src="Testi.jpg" alt="Customer" className="testimonial-image" />
+          <div className="testimonial-image-container">
+            <div className="quote-marks">"</div>
+            <img src="/Testi.jpg" alt="Customer" className="testimonial-image" />
+          </div>
           <div className="testimonial-content">
             <p className="testimonial-text">
               "Super fast service and the AC works like brand new! Highly
               recommend Air Cool Center to anyone looking for honest,
               professional help!"
             </p>
-            <p className="testimonial-author">Dilani Fernando</p>
-            <p className="testimonial-location">Kandy</p>
+            <div>
+              <p className="testimonial-author">Dilani Fernando</p>
+              <p className="testimonial-location">Kandy</p>
+            </div>
           </div>
+        </div>
+        <div className="testimonial-pagination">
+          <div className="pagination-dot active" />
+          <div className="pagination-dot" />
+          <div className="pagination-dot" />
+        </div>
+        <div className="see-all-reviews">
+          <a href="#" className="see-all-link">
+            See all review <ArrowRightIcon size={16} />
+          </a>
         </div>
       </div>
       <div className="newsletter-section">
         <div className="newsletter-image" style={{
-        backgroundImage: `url(newsletter.jpg)`
+        backgroundImage: `url(/newsletter.jpg)`
       }} />
         <div className="newsletter-content">
           <h2>Join Our Newsletter</h2>

@@ -16,7 +16,7 @@
   gap: 0.5rem;
 }
 .logo-image {
-  height: 40px;
+  height: 60px;
   width: auto;
 }
 .nav-menu {
@@ -40,15 +40,46 @@
   align-items: center;
   gap: 1.5rem;
 }
-.search-button,
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-input {
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  width: 250px;
+  font-size: 0.875rem;
+}
+.search-button {
+  position: absolute;
+  right: 0.5rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.375rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+.search-button:hover {
+  background: #0056b3;
+}
 .icon-button {
   background: none;
   border: none;
   cursor: pointer;
   color: #333;
   transition: color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
-.search-button:hover,
 .icon-button:hover {
   color: #007bff;
 }

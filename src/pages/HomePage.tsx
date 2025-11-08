@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { ProductCard } from '../components/common/ProductCard';
@@ -57,10 +57,31 @@ const products: Product[] = [{
   image: '/AC4.jpg'
 }];
 export const HomePage: React.FC = () => {
+  const [sortBy, setSortBy] = useState('default');
+  const [sortedProducts, setSortedProducts] = useState([...products, ...products, ...products]);
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setSortBy(value);
+    let sorted = [...sortedProducts];
+    switch (value) {
+      case 'price-low':
+        sorted.sort((a, b) => a.price - b.price);
+        break;
+      case 'price-high':
+        sorted.sort((a, b) => b.price - a.price);
+        break;
+      case 'name':
+        sorted.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      default:
+        sorted = [...products, ...products, ...products];
+    }
+    setSortedProducts(sorted);
+  };
   return <div className="home-page">
       <Header />
       <div className="hero-section" style={{
-      backgroundImage: `url('/banner.jpg')`
+      backgroundImage: `url(/banner.jpg)`,
     }} />
       <div className="main-content">
         <aside className="categories-sidebar">
@@ -82,10 +103,15 @@ export const HomePage: React.FC = () => {
                 <ListIcon size={20} />
               </button>
             </div>
-            <span className="text-sm text-gray-600">Default sorting</span>
+            <select className="sorting-dropdown" value={sortBy} onChange={handleSortChange}>
+              <option value="default">Default sorting</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
           </div>
           <div className="products-grid">
-            {[...products, ...products, ...products].map((product, index) => <ProductCard key={`${product.id}-${index}`} product={product} />)}
+            {sortedProducts.map((product, index) => <ProductCard key={`${product.id}-${index}`} product={product} />)}
           </div>
           <div className="see-more-container">
             <button className="see-more-button">See More...</button>

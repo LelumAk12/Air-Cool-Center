@@ -1,8 +1,13 @@
 import React from 'react';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
+import { useNavigate } from 'react-router-dom';
 import '../styles/pages/AboutPage.css';
 export const AboutPage: React.FC = () => {
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
   return <div className="about-page">
       <Header />
 
@@ -78,7 +83,9 @@ export const AboutPage: React.FC = () => {
               Your time matters — we prioritize your needs and ensure you
               receive more, faster.
             </p>
-            <button className="contact-now-button">Contact Now</button>
+            <button className="contact-now-button" onClick={handleContactClick}>
+              Contact Now
+            </button>
           </div>
         </section>
       </div>

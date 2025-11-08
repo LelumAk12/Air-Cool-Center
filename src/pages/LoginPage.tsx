@@ -25,7 +25,7 @@ export const LoginPage: React.FC = () => {
         <div className="auth-image-section">
           <img src="/BG2.jpg" alt="Air Cool Center" className="auth-image" />
         </div>
-  
+
         <div className="auth-form-section">
           <div className="auth-form-wrapper">
             <h1>Log in to Exclusive</h1>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
+import { useNavigate } from 'react-router-dom';
 import { TruckIcon, ShieldCheckIcon, WrenchIcon, HeadphonesIcon, ArrowRightIcon } from 'lucide-react';
 import { Service } from '../types';
 import '../styles/pages/ServicesPage.css';
@@ -22,24 +23,36 @@ const services: Service[] = [{
   items: ['Emergency repair with 24/7 booking', 'Damage/loss insurance for equipment', 'Post-installation with the utmost warranty']
 }];
 export const ServicesPage: React.FC = () => {
+  const navigate = useNavigate();
   return <div className="services-page">
       <Header />
 
-      <div className="services-hero-new">
-        <div className="hero-card-left">
-          <h2>
-            Your Trusted
-            <br />
-            Cooling Partner
-          </h2>
-          <button className="hero-button-white">Shop Now</button>
-        </div>
-        <div className="hero-card-right">
-          <div className="hero-right-top">
-            <h3>Air Cool Center</h3>
+      <div className="services-hero-three-cards">
+        <div className="hero-card-large">
+          <div className="hero-card-overlay"></div>
+          <div className="hero-card-content-large">
+            <h2>
+              Your Trusted
+              <br />
+              Cooling Partner
+            </h2>
+            <button className="hero-button-white" onClick={() => navigate('/sale')}>
+              Shop Now
+            </button>
           </div>
-          <div className="hero-right-bottom">
-            <p>Your Trusted Cooling Partner</p>
+        </div>
+
+        <div className="hero-cards-right">
+          <div className="hero-card-small hero-card-top">
+            <div className="hero-card-overlay"></div>
+            <div className="hero-card-content-small">
+            </div>
+          </div>
+
+          <div className="hero-card-small hero-card-bottom">
+            <div className="hero-card-overlay"></div>
+            <div className="hero-card-content-small">
+            </div>
           </div>
         </div>
       </div>

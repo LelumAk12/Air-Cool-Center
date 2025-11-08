@@ -10,28 +10,28 @@ const wishlistProducts = [{
   category: 'Deals',
   price: 334990.0,
   originalPrice: 350000.0,
-  image: '/AC1.jpg'
+  image: 'AC1.jpg'
 }, {
   id: '2',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
   category: 'Deals',
   price: 334990.0,
   originalPrice: 350000.0,
-  image: '/AC2.jpg'
+  image: 'AC2.jpg'
 }, {
   id: '3',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
   category: 'Deals',
   price: 334990.0,
   originalPrice: 350000.0,
-  image: '/AC3.jpg'
+  image: 'AC3.jpg'
 }, {
   id: '4',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
   category: 'Deals',
   price: 334990.0,
   originalPrice: 350000.0,
-  image: '/AC4.jpg'
+  image: 'AC4.jpg'
 }];
 const recommendedProducts = [...wishlistProducts];
 export const WishlistPage: React.FC = () => {

@@ -1,35 +1,38 @@
 import React from 'react';
 import { ShoppingCartIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 import { Product } from '../../types';
 import '../../styles/components/ProductCard.css';
 interface ProductCardProps {
   product: Product;
-  onBuyNow?: (product: Product) => void;
-  onAddToCart?: (product: Product) => void;
 }
 export const ProductCard: React.FC<ProductCardProps> = ({
-  product,
-  onBuyNow,
-  onAddToCart
+  product
 }) => {
   const navigate = useNavigate();
-  const handleBuyNow = () => {
-    if (onBuyNow) {
-      onBuyNow(product);
-    } else {
-      // Add to cart and go to checkout
-      console.log('Buy now:', product);
-      navigate('/checkout');
-    }
+  const {
+    addToCart
+  } = useCart();
+  const handleBuyNow = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image
+    });
+    navigate('/checkout');
   };
-  const handleAddToCart = () => {
-    if (onAddToCart) {
-      onAddToCart(product);
-    } else {
-      console.log('Added to cart:', product);
-      alert('Product added to cart!');
-    }
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image
+    });
+    alert('Product added to cart!');
   };
   const handleCardClick = () => {
     navigate(`/product/${product.id}`);

@@ -11,28 +11,28 @@ const saleProducts: Product[] = [{
   category: 'Deals',
   price: 280000.0,
   originalPrice: 350000.0,
-  image: '/AC1.jpg'
+  image: 'AC1.jpg'
 }, {
   id: '2',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
   category: 'Deals',
   price: 267992.0,
   originalPrice: 334990.0,
-  image: '/AC2.jpg'
+  image: 'AC2.jpg'
 }, {
   id: '3',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
   category: 'Deals',
   price: 267992.0,
   originalPrice: 334990.0,
-  image: '/AC3.jpg'
+  image: 'AC3.jpg'
 }, {
   id: '4',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
   category: 'Deals',
   price: 267992.0,
   originalPrice: 334990.0,
-  image: '/AC4.jpg'
+  image: 'AC4.jpg'
 }];
 const categories = [{
   name: 'Category 1',
@@ -56,24 +56,29 @@ export const SalePage: React.FC = () => {
   return <div className="sale-page">
       <Header />
 
-      <div className="flash-sales-hero">
-        <h1>Flash Sales</h1>
-        <div className="countdown">
-          <div className="countdown-item">
-            <span className="countdown-value">03</span>
-            <span className="countdown-label">Days</span>
-          </div>
-          <div className="countdown-item">
-            <span className="countdown-value">23</span>
-            <span className="countdown-label">Hours</span>
-          </div>
-          <div className="countdown-item">
-            <span className="countdown-value">19</span>
-            <span className="countdown-label">Mins</span>
-          </div>
-          <div className="countdown-item">
-            <span className="countdown-value">56</span>
-            <span className="countdown-label">Secs</span>
+      <div className="flash-sales-hero-new">
+        <div className="flash-sales-content">
+          <h1>Flash Sales</h1>
+          <div className="countdown">
+            <div className="countdown-item">
+              <div className="countdown-label">Days</div>
+              <div className="countdown-value">03</div>
+            </div>
+            <span className="countdown-separator">:</span>
+            <div className="countdown-item">
+              <div className="countdown-label">Hours</div>
+              <div className="countdown-value">23</div>
+            </div>
+            <span className="countdown-separator">:</span>
+            <div className="countdown-item">
+              <div className="countdown-label">Minutes</div>
+              <div className="countdown-value">19</div>
+            </div>
+            <span className="countdown-separator">:</span>
+            <div className="countdown-item">
+              <div className="countdown-label">Seconds</div>
+              <div className="countdown-value">56</div>
+            </div>
           </div>
         </div>
       </div>

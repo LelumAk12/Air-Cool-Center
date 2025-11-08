@@ -4,25 +4,67 @@
   background: white;
 }
 
-/* New hero section matching screenshot 5 */
-.services-hero-new {
+/* New hero section with 3 separate cards */
+.services-hero-three-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 400px;
-  gap: 0;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 500px;
 }
 
-.hero-card-left {
-  background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+.hero-card-large {
+  position: relative;
+  background-image: url('BG1.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  padding: 3rem;
+}
+
+.hero-cards-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.hero-card-small {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 4rem;
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-card-top {
+  background-image: url('BG2.jpg');
+}
+
+.hero-card-bottom {
+  background-image: url('BG3.jpg');
+}
+
+.hero-card-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-card-content-large {
+  position: relative;
+  z-index: 1;
   color: white;
 }
 
-.hero-card-left h2 {
+.hero-card-content-large h2 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2rem;
@@ -45,46 +87,21 @@
   opacity: 0.9;
 }
 
-.hero-card-right {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 0;
-}
-
-.hero-right-top {
-  background: linear-gradient(rgba(30, 144, 255, 0.85), rgba(30, 144, 255, 0.85)),
-    url('https://images.unsplash.com/photo-1631545806609-7e7c4e2e5b1d?w=800&h=400&fit=crop');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-card-content-small {
+  position: relative;
+  z-index: 1;
   color: white;
-  padding: 2rem;
+  text-align: center;
 }
 
-.hero-right-top h3 {
+.hero-card-content-small h3 {
   font-size: 2.5rem;
   font-weight: 700;
-  text-align: center;
 }
 
-.hero-right-bottom {
-  background: linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 123, 255, 0.85)),
-    url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=400&fit=crop');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  padding: 2rem;
-}
-
-.hero-right-bottom p {
+.hero-card-content-small p {
   font-size: 1.5rem;
   font-weight: 500;
-  text-align: center;
 }
 
 .features-section {
@@ -346,7 +363,7 @@
 }
 
 .newsletter-content {
-  background: #0066cc;
+  background: #7ab9f8;
   color: white;
   padding: 4rem;
   display: flex;
@@ -392,4 +409,65 @@
 
 .newsletter-button:hover {
   opacity: 0.9;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .services-hero-three-cards {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .hero-card-large {
+    min-height: 400px;
+  }
+
+  .hero-cards-right {
+    grid-template-rows: 250px 250px;
+  }
+
+  .testimonial-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .newsletter-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero-three-cards {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .hero-card-large {
+    padding: 2rem;
+    min-height: 350px;
+  }
+
+  .hero-card-content-large h2 {
+    font-size: 2rem;
+  }
+
+  .hero-card-content-small h3 {
+    font-size: 1.75rem;
+  }
+
+  .hero-card-content-small p {
+    font-size: 1.125rem;
+  }
+
+  .features-section {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
 }

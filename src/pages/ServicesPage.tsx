@@ -24,24 +24,26 @@ const services: Service[] = [{
 export const ServicesPage: React.FC = () => {
   return <div className="services-page">
       <Header />
-      <div className="services-hero">
-        <div className="hero-card" style={{
-        backgroundImage: `linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)), url(/BG1.jpg)`
-      }}>
-          <div className="hero-card-content">
-            <h2>Your Trusted Cooling Partner</h2>
-            <button className="hero-button">Shop Now</button>
-          </div>
+
+      <div className="services-hero-new">
+        <div className="hero-card-left">
+          <h2>
+            Your Trusted
+            <br />
+            Cooling Partner
+          </h2>
+          <button className="hero-button-white">Shop Now</button>
         </div>
-        <div className="hero-card" style={{
-        backgroundImage: `linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)), url(/BG2.jpg)`
-      }}>
-          <div className="hero-card-content">
-            <h2>Air Cool Center</h2>
+        <div className="hero-card-right">
+          <div className="hero-right-top">
+            <h3>Air Cool Center</h3>
+          </div>
+          <div className="hero-right-bottom">
             <p>Your Trusted Cooling Partner</p>
           </div>
         </div>
       </div>
+
       <div className="features-section">
         <div className="feature-item">
           <TruckIcon className="feature-icon" size={32} />
@@ -62,6 +64,7 @@ export const ServicesPage: React.FC = () => {
           </span>
         </div>
       </div>
+
       <div className="services-content">
         <h2 className="section-title">OUR SERVICES</h2>
         <div className="services-grid">
@@ -73,6 +76,7 @@ export const ServicesPage: React.FC = () => {
             </div>)}
         </div>
       </div>
+
       <div className="benefits-section">
         <h2 className="section-title">Benefits for your expediency</h2>
         <div className="benefits-grid">
@@ -104,6 +108,7 @@ export const ServicesPage: React.FC = () => {
           </div>
         </div>
       </div>
+
       <div className="testimonials-section">
         <h2 className="section-title">Testimonials</h2>
         <p className="testimonials-subtitle">Over 15,000 happy customers.</p>
@@ -135,6 +140,7 @@ export const ServicesPage: React.FC = () => {
           </a>
         </div>
       </div>
+
       <div className="newsletter-section">
         <div className="newsletter-image" style={{
         backgroundImage: `url(/newsletter.jpg)`

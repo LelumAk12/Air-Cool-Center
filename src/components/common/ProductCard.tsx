@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShoppingCartIcon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Product } from '../../types';
 import '../../styles/components/ProductCard.css';
 interface ProductCardProps {
@@ -12,7 +13,28 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   onBuyNow,
   onAddToCart
 }) => {
-  return <div className="product-card">
+  const navigate = useNavigate();
+  const handleBuyNow = () => {
+    if (onBuyNow) {
+      onBuyNow(product);
+    } else {
+      // Add to cart and go to checkout
+      console.log('Buy now:', product);
+      navigate('/checkout');
+    }
+  };
+  const handleAddToCart = () => {
+    if (onAddToCart) {
+      onAddToCart(product);
+    } else {
+      console.log('Added to cart:', product);
+      alert('Product added to cart!');
+    }
+  };
+  const handleCardClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+  return <div className="product-card" onClick={handleCardClick}>
       <div className="product-image-container">
         <img src={product.image} alt={product.name} className="product-image" />
       </div>
@@ -27,11 +49,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             Rs.{product.price.toLocaleString()}
           </span>
         </div>
-        <div className="product-actions">
-          <button className="buy-button" onClick={() => onBuyNow?.(product)}>
+        <div className="product-actions" onClick={e => e.stopPropagation()}>
+          <button className="buy-button" onClick={handleBuyNow}>
             Buy Now
           </button>
-          <button className="cart-button" onClick={() => onAddToCart?.(product)}>
+          <button className="cart-button" onClick={handleAddToCart}>
             <ShoppingCartIcon size={18} />
           </button>
         </div>

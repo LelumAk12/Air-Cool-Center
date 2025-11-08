@@ -5,60 +5,85 @@
   top: 0;
   z-index: 1000;
 }
+
+.header-top {
+  background: white;
+  padding: 1rem 0;
+}
+
+.header-nav {
+  background: #DEF0FE;
+  padding: 1rem 0;
+}
+
 .header-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }
+
 .logo-section {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
+
 .logo-image {
   height: 60px;
   width: auto;
 }
+
 .nav-menu {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  justify-content: center;
+  align-items: center;
 }
+
 .nav-link {
   color: #333;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 0.95rem;
   transition: color 0.3s;
 }
+
 .nav-link:hover {
   color: #007bff;
 }
+
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
+
 .search-container {
   position: relative;
   display: flex;
   align-items: center;
+  flex: 1;
+  max-width: 500px;
 }
+
 .search-input {
-  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  padding: 0.625rem 3rem 0.625rem 1rem;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
-  width: 250px;
+  width: 100%;
   font-size: 0.875rem;
 }
+
 .search-button {
   position: absolute;
   right: 0.5rem;
   background: #007bff;
   color: white;
   border: none;
-  padding: 0.375rem;
+  padding: 0.5rem;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
@@ -66,9 +91,11 @@
   justify-content: center;
   transition: background 0.3s;
 }
+
 .search-button:hover {
   background: #0056b3;
 }
+
 .icon-button {
   background: none;
   border: none;
@@ -79,10 +106,14 @@
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
+  text-decoration: none;
+  min-width: 60px;
 }
+
 .icon-button:hover {
   color: #007bff;
 }
+
 .sale-badge {
   background: #1a1a1a;
   color: white;
@@ -90,4 +121,18 @@
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 1.5rem;
+  }
+
+  .header-actions {
+    gap: 1rem;
+  }
+
+  .search-container {
+    max-width: 300px;
+  }
 }

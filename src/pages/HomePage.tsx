@@ -6,6 +6,10 @@ import { Product, Category } from '../types';
 import { GridIcon, ListIcon } from 'lucide-react';
 import '../styles/pages/HomePage.css';
 const categories: Category[] = [{
+  id: 'all',
+  name: 'All Categories',
+  count: 96
+}, {
   id: '1',
   name: 'Category 1',
   count: 10
@@ -33,36 +37,39 @@ const categories: Category[] = [{
 const products: Product[] = [{
   id: '1',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
-  category: 'Deals',
+  category: 'Category 1',
   price: 334990.0,
   originalPrice: 350000.0,
   image: '/AC1.jpg'
 }, {
   id: '2',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
-  category: 'Deals',
+  category: 'Category 2',
   price: 334990.0,
   image: '/AC2.jpg'
 }, {
   id: '3',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
-  category: 'Deals',
+  category: 'Category 1',
   price: 334990.0,
   image: '/AC3.jpg'
 }, {
   id: '4',
   name: 'Samsung Air Conditioner - 24000 BTU Inverter AC - (Wi-Fi) (SMGAR60F240U)',
-  category: 'Deals',
+  category: 'Category 3',
   price: 334990.0,
   image: '/AC4.jpg'
 }];
 export const HomePage: React.FC = () => {
   const [sortBy, setSortBy] = useState('default');
-  const [sortedProducts, setSortedProducts] = useState([...products, ...products, ...products]);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const allProducts = [...products, ...products, ...products];
+  const filteredProducts = selectedCategory === 'all' ? allProducts : allProducts.filter(p => p.category === categories.find(c => c.id === selectedCategory)?.name);
+  const [sortedProducts, setSortedProducts] = useState(filteredProducts);
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
     setSortBy(value);
-    let sorted = [...sortedProducts];
+    let sorted = [...filteredProducts];
     switch (value) {
       case 'price-low':
         sorted.sort((a, b) => a.price - b.price);
@@ -74,25 +81,31 @@ export const HomePage: React.FC = () => {
         sorted.sort((a, b) => a.name.localeCompare(b.name));
         break;
       default:
-        sorted = [...products, ...products, ...products];
+        sorted = filteredProducts;
     }
     setSortedProducts(sorted);
+  };
+  const handleCategoryClick = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    const filtered = categoryId === 'all' ? allProducts : allProducts.filter(p => p.category === categories.find(c => c.id === categoryId)?.name);
+    setSortedProducts(filtered);
   };
   return <div className="home-page">
       <Header />
       <div className="hero-section" style={{
-      backgroundImage: `url(/banner.jpg)`,
+      backgroundImage: `url(/banner.jpg)`
     }} />
       <div className="main-content">
         <aside className="categories-sidebar">
           <h2 className="categories-title">All Categories</h2>
           <ul className="category-list">
-            {categories.map(category => <li key={category.id} className="category-item">
+            {categories.map(category => <li key={category.id} className={`category-item ${selectedCategory === category.id ? 'active' : ''}`} onClick={() => handleCategoryClick(category.id)}>
                 <span className="category-name">{category.name}</span>
                 <span className="category-count">{category.count}</span>
               </li>)}
           </ul>
         </aside>
+
         <section className="products-section">
           <div className="products-header">
             <div className="view-toggle">
@@ -110,9 +123,11 @@ export const HomePage: React.FC = () => {
               <option value="name">Name: A to Z</option>
             </select>
           </div>
+
           <div className="products-grid">
             {sortedProducts.map((product, index) => <ProductCard key={`${product.id}-${index}`} product={product} />)}
           </div>
+
           <div className="see-more-container">
             <button className="see-more-button">See More...</button>
           </div>

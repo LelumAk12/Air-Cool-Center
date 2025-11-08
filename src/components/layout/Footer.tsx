@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FacebookIcon, InstagramIcon, LinkedinIcon, MailIcon, TwitterIcon } from 'lucide-react';
 import '../../styles/components/Footer.css';
 export const Footer: React.FC = () => {
@@ -8,19 +9,19 @@ export const Footer: React.FC = () => {
           <div className="footer-section">
             <h3>My Account</h3>
             <div className="social-links">
-              <a href="#" className="social-icon" aria-label="Facebook">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
                 <FacebookIcon size={20} />
               </a>
-              <a href="#" className="social-icon" aria-label="Instagram">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
                 <InstagramIcon size={20} />
               </a>
-              <a href="#" className="social-icon" aria-label="LinkedIn">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
                 <LinkedinIcon size={20} />
               </a>
-              <a href="#" className="social-icon" aria-label="Email">
+              <a href="mailto:info@kandyaircool.com" className="social-icon" aria-label="Email">
                 <MailIcon size={20} />
               </a>
-              <a href="#" className="social-icon" aria-label="Twitter">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Twitter">
                 <TwitterIcon size={20} />
               </a>
             </div>
@@ -35,19 +36,19 @@ export const Footer: React.FC = () => {
             <h3>My Account</h3>
             <ul className="footer-links">
               <li>
-                <a href="#" className="footer-link">
+                <Link to="/login" className="footer-link">
                   Sign In
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="footer-link">
+                <Link to="/signup" className="footer-link">
                   Register
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="footer-link">
+                <Link to="/cart" className="footer-link">
                   Order status
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -55,24 +56,24 @@ export const Footer: React.FC = () => {
             <h3>Services</h3>
             <ul className="footer-links">
               <li>
-                <a href="#" className="footer-link">
+                <Link to="/services" className="footer-link">
                   Repairs & Maintenance
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="footer-link">
+                <Link to="/services" className="footer-link">
                   Product Supply & Sales
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="footer-link">
+                <Link to="/services" className="footer-link">
                   Installation Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="footer-link">
+                <Link to="/services" className="footer-link">
                   Extra Services
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -80,14 +81,14 @@ export const Footer: React.FC = () => {
             <h3>Legal Stuff</h3>
             <ul className="footer-links">
               <li>
-                <a href="#" className="footer-link">
+                <Link to="/terms" className="footer-link">
                   Terms & Conditions
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="footer-link">
+                <Link to="/privacy" className="footer-link">
                   Privacy & Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
